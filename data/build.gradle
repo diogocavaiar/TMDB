@@ -1,8 +1,28 @@
-apply plugin: 'java-library'
+apply plugin: 'kotlin'
 
 dependencies {
-    implementation fileTree(dir: 'libs', include: ['*.jar'])
+    def dataDependencies = rootProject.ext.dataDependencies
+    def dataTestDependencies = rootProject.ext.dataTestDependencies
+
+    implementation project(':domain')
+
+    implementation dataDependencies.javaxAnnotation
+    implementation dataDependencies.kotlin
+    implementation dataDependencies.javaxInject
+    implementation dataDependencies.rxKotlin
+    implementation dataDependencies.gson
+    implementation dataDependencies.okHttp
+    implementation dataDependencies.okHttpLogger
+    implementation dataDependencies.retrofit
+    implementation dataDependencies.retrofitConverter
+    implementation dataDependencies.retrofitAdapter
+    implementation dataDependencies.paging
+
+    implementation dataTestDependencies.junit
+    implementation dataTestDependencies.kotlinJUnit
+    implementation dataTestDependencies.mockito
+    implementation dataTestDependencies.assertj
 }
 
-sourceCompatibility = "7"
-targetCompatibility = "7"
+sourceCompatibility = "8"
+targetCompatibility = "8"
