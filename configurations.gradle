@@ -1,0 +1,12 @@
+ext {
+
+    android = [
+            buildToolsVersion: "28.0.3",
+            minSdkVersion    : 21,
+            targetSdkVersion : 28,
+            compileSdkVersion: 28
+    ]
+
+    endpoint = "\"https://api.themoviedb.org/3/\""
+    apiKey = "\"6ade48b3dd5b454dedf46ee38bc1d6c9\""
+}
